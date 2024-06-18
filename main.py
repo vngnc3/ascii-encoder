@@ -15,11 +15,11 @@ shaders = {
 
 # Render Settings
 shader = "unicode_izzy"
-column = 96
-lineHeight = 0.6
+column = 48
+lineHeight = 0.5
 invert = False
 normalize = False
-overwrite = False
+overwrite = True
 
 def create_folders():
     # Check if the input and output folders already exist to avoid unnecessary directory creation
@@ -65,7 +65,7 @@ def image_to_ascii(image_path, num_cols, shader_key, line_height=1, invert=False
         pixels = [(x - min_pixel) * 255 // (max_pixel - min_pixel) for x in pixels]
     
     ascii_str = ''
-    total_pixels = len(pixels)
+    # total_pixels = len(pixels)
     # progress_bar = tqdm(total=total_pixels, desc="🧠 Converting image to ASCII")
     
     for pixel_value in pixels:
